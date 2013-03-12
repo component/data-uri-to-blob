@@ -1,0 +1,13 @@
+{
+  "name": "data-uri-to-blob",
+  "description": "Get a Blob from a data uri",
+  "version": "0.0.1",
+  "keywords": ["blob", "uri"],
+  "development": {},
+  "license": "MIT",
+  "component": {
+    "scripts": {
+      "data-uri-to-blob/index.js": "index.js"
+    }
+  }
+}
