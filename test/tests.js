@@ -15,5 +15,6 @@ describe('blob(uri)', function(){
     var type = {}.toString.call(blob);
     assert('[object Blob]' == type);
     assert('image/png' == blob.type, 'invalid .type');
+    assert(blob.size == blob.slice().size);
   })
 })

@@ -30,8 +30,11 @@ module.exports = function(uri){
   for (var i = 0; i < bytes.length; i++) {
     arr[i] = bytes.charCodeAt(i);
   }
-
-  if (Blob) return new Blob([arr], { type: mime(uri) });
+  if (Blob) {
+    var blob = new Blob([arr], { type: mime(uri) });
+    blob.slice = blob.slice || blob.webkitSlice;
+    return blob;
+  }
 
   var bb = new BlobBuilder;
   bb.append(buf);
