@@ -2,7 +2,7 @@
   "name": "data-uri-to-blob",
   "repo": "component/data-uri-to-blob",
   "description": "Get a Blob from a data uri",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": ["blob", "uri"],
   "dependencies": {
     "component/assert": "*"
