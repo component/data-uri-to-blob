@@ -6,15 +6,6 @@
 var Blob = window.Blob;
 
 /**
- * Blob builder.
- */
-
-var BlobBuilder = window.BlobBuilder
-   || window.WebKitBlobBuilder
-   || window.MozBlobBuilder
-   || window.MSBlobBuilder;
-
-/**
  * Return a `Blob` for the given data `uri`.
  *
  * @param {String} uri
@@ -30,15 +21,10 @@ module.exports = function(uri){
   for (var i = 0; i < bytes.length; i++) {
     arr[i] = bytes.charCodeAt(i);
   }
-  if (Blob) {
-    var blob = new Blob([arr], { type: mime(uri) });
-    blob.slice = blob.slice || blob.webkitSlice;
-    return blob;
-  }
 
-  var bb = new BlobBuilder;
-  bb.append(buf);
-  return bb.getBlob(mime(uri));
+  var blob = new Blob([arr], { type: mime(uri) });
+  blob.slice = blob.slice || blob.webkitSlice;
+  return blob;
 };
 
 /**
