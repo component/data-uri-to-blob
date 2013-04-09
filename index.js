@@ -6,6 +6,12 @@
 var Blob = window.Blob;
 
 /**
+ * ArrayBufferView support.
+ */
+
+var hasArrayBufferView = new Blob([new Uint8Array(100)]).size == 100;
+
+/**
  * Return a `Blob` for the given data `uri`.
  *
  * @param {String} uri
@@ -22,6 +28,7 @@ module.exports = function(uri){
     arr[i] = bytes.charCodeAt(i);
   }
 
+  if (!hasArrayBufferView) arr = buf;
   var blob = new Blob([arr], { type: mime(uri) });
   blob.slice = blob.slice || blob.webkitSlice;
   return blob;

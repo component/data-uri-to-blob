@@ -16,5 +16,6 @@ describe('blob(uri)', function(){
     assert('[object Blob]' == type);
     assert('image/png' == blob.type, 'invalid .type');
     assert(blob.size == blob.slice().size);
+    assert(blob.size > 50);
   })
 })
