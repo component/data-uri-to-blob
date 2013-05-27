@@ -1,7 +1,7 @@
 {
   "name": "data-uri-to-blob",
   "description": "Get a Blob from a data uri",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": ["blob", "uri"],
   "development": {},
   "license": "MIT",
