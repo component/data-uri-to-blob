@@ -4,10 +4,9 @@
   "description": "Get a Blob from a data uri",
   "version": "0.0.4",
   "keywords": ["blob", "uri"],
-  "dependencies": {
+  "development": {
     "component/assert": "*"
   },
-  "development": {},
   "license": "MIT",
   "scripts": [
     "index.js"
