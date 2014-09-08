@@ -21,7 +21,7 @@ var hasArrayBufferView = new Blob([new Uint8Array(100)]).size == 100;
 
 module.exports = function(uri){
   var data = uri.split(',')[1];
-  var bytes = atob(data);
+  var bytes = typeof atob === 'undefined' ? window.atob(data) : atob(data);
   var buf = new ArrayBuffer(bytes.length);
   var arr = new Uint8Array(buf);
   for (var i = 0; i < bytes.length; i++) {
